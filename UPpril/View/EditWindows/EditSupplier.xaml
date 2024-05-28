@@ -1,0 +1,54 @@
+﻿<Window x:Class="UPpril.View.EditWindows.EditSupplier"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Изменение данных в таблице Поставщики" Height="450" Width="400"   MinHeight="450" MinWidth="400">
+    <Grid Background="#C3DBD5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="10"
+                   Text="Изменить запись" FontSize="16" FontWeight="Bold" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="10" Text="Company_Name" VerticalAlignment="Center" />
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="10" x:Name="CompanyNameTextBox" />
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="10" Text="Telephone" VerticalAlignment="Center" />
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="10" x:Name="Edit_TelephoneTextBox" />
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Margin="10" Text="City" VerticalAlignment="Center" />
+        <TextBox Grid.Row="3" Grid.Column="1" Margin="10" x:Name="Edit_CityTextBox" />
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Margin="10" Text="Street" VerticalAlignment="Center" />
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="10" x:Name="Edit_StreetTextBox" />
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Margin="10" Text="Home" VerticalAlignment="Center" />
+        <TextBox Grid.Row="5" Grid.Column="1" Margin="10" x:Name="Edit_HomeTextBox" />
+
+        <TextBlock Grid.Row="6" Grid.Column="0" Margin="10" Text="Surname_Director" VerticalAlignment="Center" />
+        <TextBox Grid.Row="6" Grid.Column="1" Margin="10" x:Name="Edit_SurnameDirectorTextBox" />
+
+        <StackPanel Grid.Row="7" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,33,0,82">
+            <Button Width="100" Margin="40,0,0,0" Background="LightBlue" Content="СОХРАНИТЬ" Click="EditSupplier_Click" />
+            <Button Width="100" Margin="90,0,0,0" Background="LightCoral" Content="ОТМЕНИТЬ" Click="Cancel_Click" />
+        </StackPanel>
+
+        <Grid HorizontalAlignment="Right" Grid.Row="7" Height="68" Margin="0,0,5,10" VerticalAlignment="Bottom" Width="83" Grid.Column="1">
+
+            <TextBlock Text="ООО &quot;Опт Лидер&quot;" FontSize="10" Margin="0,55,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Source="/View/icon.png" Width="50" Height="50" Margin="0,0,14,18" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,41 @@
+﻿<Window x:Class="UPpril.OrderConsumerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Заказы и Потребители (Администратор)" Height="750" Width="1200" Background="#b5d5ca" MinWidth="700" MinHeight="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <DataGrid x:Name="OrderConsumerDataGrid" CanUserAddRows="False" VerticalAlignment="Top" Margin="10,10,10,0" AutoGenerateColumns="False">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="FontSize" Value="16"/>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Order_Consumer_ID" Binding="{Binding Order_Consumer_ID}" Width="*"/>
+                    <DataGridTextColumn Header="Order_ID" Binding="{Binding Order_ID}" Width="*"/>
+                    <DataGridTextColumn Header="Product_ID" Binding="{Binding Order.Products[0].Product_ID}" Width="*"/>
+                    <DataGridTextColumn Header="Product_Name" Binding="{Binding Order.Products[0].Product_Name}" Width="*"/>
+                    <DataGridTextColumn Header="Consumer_ID" Binding="{Binding Consumer_ID}" Width="*"/>
+                    <DataGridTextColumn Header="Surname" Binding="{Binding Consumer.Surname}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+
+        <Grid HorizontalAlignment="Right" Height="68" Margin="0,0,5,5" VerticalAlignment="Bottom" Width="84" Grid.Row="2">
+            <TextBlock Text="ООО &quot;Опт Лидер&quot;" FontSize="10" Margin="0,55,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Source="/View/icon.png" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
+        </Grid>
+    </Grid>
+</Window>

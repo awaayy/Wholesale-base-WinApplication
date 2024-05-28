@@ -1,0 +1,37 @@
+﻿<Window x:Class="UPpril.AddUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добавить пользователя" Height="300" Width="300" Background="#b5d5ca" MinWidth="250" MinHeight="200">
+    <Grid>
+        <StackPanel Margin="10">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Label Content="Логин:" Width="60" VerticalAlignment="Center" />
+                <TextBox Name="LoginTextBox" Width="200" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Label Content="Пароль:" Width="60" VerticalAlignment="Center" />
+                <PasswordBox Name="PasswordBox" Width="200" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Label Content="Роль:" Width="60" VerticalAlignment="Center" />
+                <ComboBox x:Name="RolesComboBox" SelectedIndex="0" Width="100">
+                    <ComboBoxItem>Staff</ComboBoxItem>
+                    <ComboBoxItem>Administrator</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+            <Button Content="Добавить" Click="AddButton_Click" Width="100" Margin="0,20,0,0" Background="#d1eefc" />
+        </StackPanel>
+
+        <Grid HorizontalAlignment="Right" Height="68" Margin="0,0,5,5" VerticalAlignment="Bottom" Width="82">
+
+            <TextBlock Text="ООО &quot;Опт Лидер&quot;" FontSize="10" Margin="0,55,0,0" 
+        HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+            <Image Source="/View/icon.png" 
+        Width="50" Height="50" Margin="0,0,13,18" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+
+        </Grid>
+    </Grid>
+</Window>

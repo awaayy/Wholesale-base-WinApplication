@@ -1,0 +1,39 @@
+﻿<Window x:Class="UPpril.ProductWarehouseSupplierWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Продукты, Склад, Поставщики" Height="450" Width="800" Background="#b5d5ca">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <DataGrid x:Name="productWarehouseSupplierDataGrid" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" VerticalAlignment="Top" Margin="10,10,10,0">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="FontSize" Value="16"/>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Product_Warehouse_Supplier_ID" Binding="{Binding Product_Warehouse_Supplier_ID}" Width="*"/>
+                    <DataGridTextColumn Header="Product_ID" Binding="{Binding Product_ID}" Width="*"/>
+                    <DataGridTextColumn Header="Product_Name" Binding="{Binding Product.Product_Name}" Width="*"/>
+                    <DataGridTextColumn Header="Supplier_ID" Binding="{Binding Supplier_ID}" Width="*"/>
+                    <DataGridTextColumn Header="Supplier_Surname" Binding="{Binding Supplier.Surname_Director}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+        <Grid HorizontalAlignment="Right" Height="68" Margin="0,0,5,5" VerticalAlignment="Bottom" Width="84" Grid.Row="2">
+            <TextBlock Text="ООО &quot;Опт Лидер&quot;" FontSize="10" Margin="0,55,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Source="/View/icon.png" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
+        </Grid>
+    </Grid>
+</Window>

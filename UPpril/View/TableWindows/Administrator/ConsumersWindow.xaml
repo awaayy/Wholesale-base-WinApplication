@@ -1,0 +1,53 @@
+﻿<Window x:Class="UPpril.ConsumersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Потребители (Администратор)" Height="750" Width="950" Background="#b5d5ca" MinWidth="700" MinHeight="900" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="28,44,0,0" Grid.Row="0">
+            <TextBox x:Name="SearchTextBox" Width="200" Margin="10"/>
+            <Button Content="Поиск по телефону" Width="129" Margin="10,0,0,0" Click="SearchButton_Click" Height="28" Background="#fffcd6" />
+            <Button Content="Сбросить" Width="100" Margin="10,0,0,0" Click="ResetButton_Click" Height="28" Background="#fffcd6" />
+            <Button Content="Экспорт в Excel" Width="100" Margin="10" Click="ExportToExcel_Click" Background="#fffcd6" Height="28"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <DataGrid x:Name="ConsumersDataGrid" CanUserAddRows="False" VerticalAlignment="Top" Margin="10,10,10,0" AutoGenerateColumns="False">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="FontSize" Value="16"/>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Consumer_ID" Binding="{Binding Consumer_ID}" Width="*"/>
+                    <DataGridTextColumn Header="Surname" Binding="{Binding Surname}" Width="*"/>
+                    <DataGridTextColumn Header="Telephone" Binding="{Binding Telephone}" Width="*"/>
+                    <DataGridTextColumn Header="City" Binding="{Binding City}" Width="*"/>
+                    <DataGridTextColumn Header="Street" Binding="{Binding Street}" Width="*"/>
+                    <DataGridTextColumn Header="Home" Binding="{Binding Home}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="10" Grid.Column="1" VerticalAlignment="Stretch">
+                <Button Content="ДОБАВИТЬ" Width="100" Margin="0,10,0,10" Background="#fffcd6" Height="30" Click="AddConsumer_Click"/>
+                <Button Content="ИЗМЕНИТЬ" Width="100" Margin="0,10,0,10" Background="#fffcd6" Height="30" Click="EditConsumer_Click"/>
+                <Button Content="УДАЛИТЬ" Width="100"  Margin="0,10,0,10" Background="#fffcd6" Height="30" Click="DeleteConsumer_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid HorizontalAlignment="Right" Height="68" Margin="0,0,5,5" VerticalAlignment="Bottom" Width="84" Grid.Row="2">
+            <TextBlock Text="ООО &quot;Опт Лидер&quot;" FontSize="10" Margin="0,55,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Source="/View/icon.png" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
+        </Grid>
+    </Grid>
+</Window>
